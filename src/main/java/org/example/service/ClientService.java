@@ -8,14 +8,14 @@ import java.util.regex.Pattern;
 
 public class ClientService {
 
-    private static String EMAIL_PATERN = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
-    private static String NAME_PATERN = "^[A-Z][a-z]*(?:[ '-][A-Za-z]+)*$";
+    private static final String EMAIL_PATERN = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+    private static final String NAME_PATERN = "^[A-Z][a-z]*(?:[ '-][A-Za-z]+)*$";
 
    public Client registerNewClient(){
        Client client = null;
 
         System.out.println("Please provide client details.");
-        System.out.println("Email: ");
+        System.out.print("Email: ");
 
         String email = Main.SCANNER.nextLine();
 

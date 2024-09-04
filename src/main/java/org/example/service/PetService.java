@@ -6,12 +6,12 @@ import org.example.model.Pet;
 
 public class PetService {
 
-    private static String DOG_TYPE = "dog";
+    private static final String DOG_TYPE = "dog";
 
     public Pet registerNewPet() {
         Pet pet = new Pet();
 
-        System.out.print("Type (dog / cat / other");
+        System.out.print("Type (dog / cat / other): ");
         String type = Main.SCANNER.nextLine();
 
 

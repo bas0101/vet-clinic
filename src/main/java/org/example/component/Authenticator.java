@@ -3,7 +3,7 @@ package org.example.component;
 import org.example.Main;
 
 public class Authenticator {
-    private static String PASSWORD = "1";
+    private static final String PASSWORD = "1";
    public static boolean auth() {
         boolean accepted = false;
         for (int i = 0; i < 3; i++) {
