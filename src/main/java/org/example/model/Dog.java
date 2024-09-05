@@ -19,6 +19,13 @@ public class Dog extends Pet{
         this.size = size;
     }
 
+    public Dog(String size, String age) {
+        this.size = size;
+        setAge(age); // Виклик методу setAge() для встановлення віку
+    }
+
+
+
     @Override
     public String toString() {
         return "Dog {"
