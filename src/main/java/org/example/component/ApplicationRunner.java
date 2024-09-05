@@ -22,9 +22,11 @@ public class ApplicationRunner {
                if("yes".equals(response)){
                    System.out.println("Adding a new pet.");
                    Pet pet = petService.registerNewPet();
-                   client.setPet(pet);
-                   pet.setOwnerName(client.getFirstName() + " " + client.getLastName());
-                   System.out.println("Pet has been added.");
+                   if (pet != null) {
+                       client.setPet(pet);
+                       pet.setOwnerName(client.getFirstName() + " " + client.getLastName());
+                       System.out.println("Pet has been added.");
+                   }
                } else {
                    System.out.println("Client registration completed without a pet.");
                }
