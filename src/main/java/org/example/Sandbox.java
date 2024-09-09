@@ -10,6 +10,8 @@ import java.util.Comparator;
 
 public class Sandbox {
     public static void main(String[] args) {
+        System.out.println(new Cat());
+       /*
         Dog[] dogs = {
                 new Dog(Dog.Size.M, "2"),
                 new Dog(Dog.Size.L, "8"),
@@ -41,5 +43,9 @@ public class Sandbox {
         for (Dog dog : dogs) {
             System.out.println(dog.getSize() + " (age=" + dog.getAge() + ")");
         }
+
+        */
     }
+
+
 }
