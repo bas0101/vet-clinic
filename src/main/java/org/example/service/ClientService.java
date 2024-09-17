@@ -15,7 +15,7 @@ public class ClientService {
        Client client = null;
 
         System.out.println("Please provide client details.");
-        System.out.print("Email: ");
+        System.out.print    ("Email: ");
 
         String email = Main.SCANNER.nextLine();
 
@@ -59,6 +59,10 @@ public class ClientService {
             System.out.println("Provided last name is invalid.");
             return null;  // Stop execution if the last name is invalid
         }
+
+        System.out.println("Location: ");
+        String location = Main.SCANNER.nextLine();
+        client.setLocation(Client.Location.valueOf(location));
 
         return client;
 
