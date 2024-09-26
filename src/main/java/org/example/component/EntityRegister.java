@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class EntityRegister {
     private final ClientService clientService = new ClientService();
@@ -27,7 +28,8 @@ public class EntityRegister {
 
         } while (verifyRepeating(message));
 
-        Map<Client.Location, List<Client>> clientsByLocation = groupClients(clients);
+        Map<Client.Location, List<Client>> clientsByLocation = clients.stream()
+                .collect(Collectors.groupingBy(Client::getLocation));
         printClients(clientsByLocation);
 
     }
@@ -41,7 +43,7 @@ public class EntityRegister {
         }
     }
 
-    private Map<Client.Location,List<Client>> groupClients(List<Client> clients) {
+    /* private Map<Client.Location,List<Client>> groupClients(List<Client> clients) {
         List<Client> fromKyiv = new ArrayList<>();
         List<Client> fromLviv = new ArrayList<>();
         List<Client> fromOdesa = new ArrayList<>();
@@ -68,7 +70,7 @@ public class EntityRegister {
         return clientsByLocation;
 
     }
-
+*/
     private Client addClient(){
         Client client = clientService.registerNewClient();
 
