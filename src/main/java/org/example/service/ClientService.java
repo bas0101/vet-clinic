@@ -15,7 +15,7 @@ public class ClientService {
        Client client = null;
 
         System.out.println("Please provide client details.");
-        System.out.print("Email: ");
+        System.out.print    ("Email: ");
 
         String email = Main.SCANNER.nextLine();
 
@@ -47,6 +47,7 @@ public class ClientService {
             client.setFirstName(firstName);
         } else {
             System.out.println("Provided first name is invalid.");
+
             return null;  // Stop execution if the first name is invalid
         }
 
@@ -59,6 +60,20 @@ public class ClientService {
             System.out.println("Provided last name is invalid.");
             return null;  // Stop execution if the last name is invalid
         }
+
+        System.out.println("Location: ");
+        Client.Location location;
+        String locationInput = Main.SCANNER.nextLine();
+
+        try {
+            location = Client.Location.valueOf(locationInput);
+        } catch (IllegalArgumentException e) {
+            location = Client.Location.UNKNOWN;
+            System.out.println("Unable to parse value '" + locationInput
+                    + "', Using default value: " + Client.Location.UNKNOWN);
+        }
+
+        client.setLocation(location);
 
         return client;
 
